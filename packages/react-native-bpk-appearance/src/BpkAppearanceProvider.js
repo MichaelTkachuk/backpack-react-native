@@ -24,6 +24,7 @@ import React, {
   type Context,
   type Node,
 } from 'react';
+import { AppearanceProvider } from 'react-native-appearance';
 
 import BpkAppearance, { type BpkAppearancePreferences } from './BpkAppearance';
 
@@ -57,7 +58,7 @@ const BpkAppearanceProvider = ({ children, appearanceOverride }: Props) => {
     <BpkAppearanceProviderContext.Provider
       value={{ ...currentAppearance, ...appearanceOverride }}
     >
-      {children}
+      <AppearanceProvider>{children}</AppearanceProvider>
     </BpkAppearanceProviderContext.Provider>
   );
 };
